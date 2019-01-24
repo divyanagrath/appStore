@@ -5,6 +5,4 @@
     log: 'error'
   });
 
-  module.exports = {
-    esClient
-  };
+  module.exports.esClient = esClient;

@@ -4,9 +4,9 @@
     log: 'error'
   });
 
-/*esClient.indices.create({  
+esClient.indices.create({  
   index: 'users'
-});*/
+});
 
 esClient.indices.putMapping({
         index: "users",
@@ -31,6 +31,37 @@ esClient.indices.putMapping({
 	  role: {
         type: 'text'
       }
+            }
+        }
+    });
+	
+	esClient.indices.create({  
+		index: 'app'
+	});
+
+	esClient.indices.putMapping({
+        index: "app",
+        type: "document",
+        body: {
+            properties: {
+                appName: {
+					type: 'text'
+				},
+				appDescription: {
+					type: 'text'
+				},
+				appVersion: {
+					type: 'text'
+				},
+				status: {
+					type: 'text'
+				},
+				apkFile: {
+					type: 'text'
+				},
+				createdAt: {
+					type: 'text'
+				}
             }
         }
     });
